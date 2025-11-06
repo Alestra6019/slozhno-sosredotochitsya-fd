@@ -1,5 +1,143 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
+  background-image: var(--bg-page-image);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-color: var(--bg-color);
+  padding: 10px;
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+}
+
+.decorated-zone::before,
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  pointer-events: none;
+}
+
+.decorated-zone::before {
+  left: var(--corner-inset);
+  bottom: var(--corner-inset);
+  border-inline-start:  1px solid var(--decorated-zone-color);
+  border-block-end: 1px solid var(--decorated-zone-color);
+}
+
+.decorated-zone::after {
+  right: var(--corner-inset);
+  top: var(--corner-inset);
+  border-inline-end: 1px solid var(--decorated-zone-color);
+  border-block-start: 1px solid var(--decorated-zone-color);
+}
+
+/*@media (prefers-color-scheme: light) {*/
+/*  .decorated-zone::before,*/
+/*  .decorated-zone::after {*/
+/*    display: none;*/
+/*  }*/
+/*}*/
+
+
+.header {
+  display: grid;
+  grid-template-rows: repeat(3, minmax(min-content, max-content));
+  height: 100svh;
+  min-height: 668px;
+  justify-content: start;
+  align-items: center;
+}
+
+.rec {
+  position: absolute;
+  top: var(--corner-inset);
+  right: calc(var(--corner-inset) + 10px);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: inherit;
+  font-size: 1em;
+  font-weight: normal;
+  line-height: 25px;
+  text-transform: uppercase;
+  color: var(--decorated-zone-color);
+}
+
+.rec::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 0.3em 0.2em currentColor;
+}
+
+.header__theme-menu {
+  justify-self: end;
+  align-self: start;
+  margin-block-start: 65px;
+}
+
+.header__theme-menu-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 10px;
+  justify-content: center;
+  align-items: start;
+}
+
+.header__theme-menu-button {
+  display: block;
+  appearance: none;
+  min-block-size: 26px;
+  min-inline-size: 70px;
+  background-color: transparent;
+  text-transform: lowercase;
+  font-size: 1em;
+  color: var(--decorated-zone-color);
+  line-height: 1em;
+  border: none;
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+  border-block-end: 1px solid var(--decorated-zone-color);
+}
+
+.header__theme-menu-button:focus-visible {
+  border: 1px solid #fff;
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid rgb(from var(--decorated-zone-color) r g b / 0.4);
+  cursor: pointer;
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--decorated-zone-color);
+  cursor: pointer;
+}
+
+.header__title {
+  margin-block-start: 65px;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 83%;
+  color: var(--focus-color);
+  text-shadow: 4px 4px 0 var(--accent-color);
+  justify-self: start;
+  align-self: start;
+}
+
+.header__description {
+  margin-block-start: 55px;
+  background-color: var(--accent-color);
+  font-family: inherit;
+  font-size: 1em;
+  line-height: 23.4px;
+  white-space: pre-line;
 }
