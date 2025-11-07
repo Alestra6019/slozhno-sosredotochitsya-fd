@@ -1,11 +1,19 @@
 :root {
-  --bg-page-image: url(../images/cover-image.png);
+  --bg-page-image: url(../images/cover-image-dark.png);
   --bg-color: #000028;
   --decorated-zone-color: #FF0070;
   --corner-inset: 10px;
   --focus-color: #DB00FF;
-  --accent-color: #FF0070
-
+  --focus-visible-color: #FFF;
+  --accent-color: #FF0070;
+  --accent-text-color: #000028;
+  --font-size: 18px;
+  --font-color-article-text: #F1B2CE;
+  --image-sunset: url(../images/sunset.png);
+  --image-ice-cream: url(../images/ice-cream.png);
+  --image-street: url(../images/street.png);
+  --image-tape: url(../images/tape.png);
+  --image-books: url(../images/books.png);
 }
 
 /*
