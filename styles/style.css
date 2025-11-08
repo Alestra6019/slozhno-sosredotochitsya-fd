@@ -10,6 +10,10 @@
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
 }
 
+.decorated-zone {
+  position: relative;
+}
+
 .decorated-zone::before,
 .decorated-zone::after {
   content: "";
@@ -20,17 +24,27 @@
 }
 
 .decorated-zone::before {
-  left: var(--corner-inset);
-  bottom: var(--corner-inset);
+  left: 0px;
+  bottom: calc(var(--corner-inset) + 10px);
   border-inline-start:  1px solid var(--decorated-zone-color);
   border-block-end: 1px solid var(--decorated-zone-color);
 }
 
 .decorated-zone::after {
-  right: var(--corner-inset);
-  top: var(--corner-inset);
+  right: 0px;
+  top: 0px;
   border-inline-end: 1px solid var(--decorated-zone-color);
   border-block-start: 1px solid var(--decorated-zone-color);
+}
+
+footer.decorated-zone::before {
+  left: 0px;
+  bottom: var(--corner-inset);
+}
+
+footer.decorated-zone::after {
+  right: 0px;
+  top: var(--corner-inset);
 }
 
 /*@media (prefers-color-scheme: light) {*/
@@ -52,12 +66,12 @@
 
 .rec {
   position: absolute;
-  top: var(--corner-inset);
-  right: calc(var(--corner-inset) + 10px);
+  top: 0%;
+  right: 10px;
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-family: inherit;
+  font-family: 'IBM Plex mono', monospace;
   font-size: 1em;
   font-weight: normal;
   line-height: 25px;
@@ -121,13 +135,16 @@
   cursor: pointer;
 }
 
-.header__no-focus {
-  margin-block-start: 65px;
-  font-family: inherit;
+.focus {
+  font-family: 'IBM Plex mono', monospace;
   font-weight: 700;
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 83%;
   color: var(--focus-color);
+  }
+
+.header__no-focus {
+  margin-block-start: 65px;
   text-shadow: 4px 4px 0 var(--accent-color);
   justify-self: start;
   align-self: start;
@@ -135,12 +152,12 @@
 
 .header__title {
   margin-block-start: 55px;
-  font-family: inherit;
+  font-family: 'IBM Plex mono', monospace;
   font-size: 1em;
   line-height: 23.4px;
   white-space: pre-line;
   display: grid;
-  grid-template-columns: minmax(min-content, 365px);
+  grid-template-columns: minmax(min-content, 355px);
   justify-self: end;
 }
 
@@ -153,26 +170,25 @@
 .main {
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: repeat(auto-fit, minmax(min-content, 1fr));
+  grid-template-rows: auto minmax(min-content, max-content);
+  grid-auto-rows: minmax(min-content, auto);
   gap: 50px;
-  grid-auto-flow: row;
-  margin-block-start: 2rem;
-  /*block-size: 100svh;*/
-  inline-size: 100%;
-  min-block-size: 668px;
+  margin-block-start: 9%;
 }
 
 .main__section {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(auto-fit, minmax(min-content, 1fr));
-  gap: 20px;
+  grid-template-columns: 100%;
+  grid-template-rows: auto minmax(min-content, max-content);
+  grid-auto-rows: minmax(min-content, auto);
+
 }
 
 .main__article {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(auto-fit, minmax(min-content, 1fr));
+  grid-template-rows: auto minmax(min-content, max-content);
+  grid-auto-rows: minmax(min-content, auto);
   gap: 20px;
 }
 
@@ -180,7 +196,7 @@
 .main__subtitle-extra,
 .main__subtitle-mini,
 .main__paragraph {
-  font-family: inherit;
+  font-family: 'IBM Plex mono', monospace;
   font-size: 1em;
   line-height: 23.4px;
 }
@@ -196,6 +212,10 @@
   flex-direction: column;
   flex-wrap: wrap;
   gap: 10px;
+}
+
+.main__article-part-mini:not(:first-of-type) {
+  margin-block-start: 10px;
 }
 
 .main__subtitle-extra,
@@ -241,50 +261,43 @@
   margin-block-end: 10px;
 }
 
-.gallery {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(auto-fit, minmax(min-content, 1fr));
-  gap: 10px;
-  justify-content: stretch;
+.gallery h3 {
+  margin-block-end: 10px;
 }
 
 .gallery__pictures {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min-content, 1fr));
+  grid-template-columns: 100%;
   gap: 10px;
   justify-content: center;
   align-items: center;
 }
 
-.gallery__pictures {
+.pictures {
   display: block;
   width: 100%;
-  height: 100%;
-}
-
-.pictures {
+  height: auto;
   background-size: cover;
   background-position: center;
-}
-
-.gallery__pictures-sunset {
-  background-image: var(--image-sunset);
-}
-
-.gallery__pictures-ice-cream {
-  background-image: var(--image-ice-cream);
-}
-
-.gallery__pictures-tape {
-  background-image: var(--image-tape);
-}
-
-.gallery__pictures-books {
-  background-image: var(--image-books);
+  background-repeat: no-repeat;
 }
 
 .gallery__pictures-street {
-  background-image: var(--image-street);
+  margin-block-end: 40px;
+}
+
+.footer {
+  display: grid;
+  block-size: 100svh;
+  inline-size: 100%;
+  min-block-size: 668px;
+  align-content: stretch;
+}
+
+.footer__focus {
+  text-shadow: 2px 2px 0 var(--accent-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
