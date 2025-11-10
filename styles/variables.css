@@ -7,13 +7,18 @@
   --focus-visible-color: #FFF;
   --accent-color: #FF0070;
   --accent-text-color: #000028;
+  --main-font-family: 'IBM Plex mono';
   --font-size: 18px;
+  --adaptive-paddings: clamp(10px, calc(10px + ((100vw - 375px) * (10 / (768 - 375)))), 20px);
+  --main-gap: clamp(50px, calc(50px + ((100vh - 668px) * (50 / (1024 - 668)))), 80px);
+  --inside-sections-gap: 20px;
   --font-color-article-text: #F1B2CE;
   --image-sunset: url(../images/sunset.png);
   --image-ice-cream: url(../images/ice-cream.png);
   --image-street: url(../images/street.png);
   --image-tape: url(../images/tape.png);
   --image-books: url(../images/books.png);
+  --theme-switcher-display: inline-flex;
 }
 
 /*
