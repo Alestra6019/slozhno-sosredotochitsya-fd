@@ -1,5 +1,6 @@
 :root {
   --bg-page-image: url(../images/cover-image-dark.png);
+  --page-gap: 40px;
   --bg-color: #000028;
   --decorated-zone-color: #FF0070;
   --corner-inset: 10px;
@@ -9,8 +10,8 @@
   --accent-text-color: #000028;
   --main-font-family: 'IBM Plex mono';
   --font-size: 18px;
-  --adaptive-paddings: clamp(10px, calc(10px + ((100vw - 375px) * (10 / (768 - 375)))), 20px);
-  --main-gap: clamp(50px, calc(50px + ((100vh - 668px) * (50 / (1024 - 668)))), 80px);
+  --adaptive-paddings: 10px;
+  --main-gap: 50px;
   --inside-sections-gap: 20px;
   --font-color-article-text: #F1B2CE;
   --image-sunset: url(../images/sunset.png);

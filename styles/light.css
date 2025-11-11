@@ -22,17 +22,18 @@
 }
 
 @media (prefers-color-scheme: light) {
-:root {
-  --bg-page-image: url(../images/cover-image-light.png);
-  --bg-color: #FFF1F7;
-  --decorated-zone-color: #353430;
-  --corner-inset: 10px;
-  --focus-color: #FFC2E6;
-  --focus-visible-color: #FFF;
-  --accent-color: #FF8DCB;
-  --accent-text-color: #353430;
-  --font-color-article-text: #353430;
-  --theme-switcher-display: none;
+  :root {
+    --bg-page-image: url(../images/cover-image-light.png);
+    --bg-color: #FFF1F7;
+    --decorated-zone-color: #353430;
+    --corner-inset: 10px;
+    --focus-color: #FFC2E6;
+    --focus-visible-color: #FFF;
+    --accent-color: #FF8DCB;
+    --accent-text-color: #353430;
+    --font-color-article-text: #353430;
+    --theme-switcher-display: none;
+  }
 }
 
 @media (prefers-color-scheme: light) {

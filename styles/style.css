@@ -7,6 +7,8 @@
   background-attachment: fixed;
   background-color: var(--bg-color);
   padding: var(--adaptive-paddings);
+  display: grid;
+  gap: var(--page-gap, 40px);
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
 }
 
@@ -16,12 +18,11 @@
   block-size: 98vh;
   inline-size: 100%;
   min-block-size: 658px;
-  padding-block-end: var(--adaptive-paddings);
+  padding-block-end: 10px;
 }
 
 .decorated-zone {
   position: relative;
-
 }
 
 .decorated-zone::before,
@@ -133,8 +134,8 @@ footer.decorated-zone::after {
 
 .header__no-focus {
   text-shadow: 4px 4px 0 var(--accent-color);
-  justify-self: center;
-  align-self: start;
+  justify-self: start;
+  align-self: center;
 }
 
 .header__title {
@@ -143,6 +144,7 @@ footer.decorated-zone::after {
   line-height: 23.4px;
   white-space: pre-line;
   align-self: center;
+  justify-self: end;
 }
 
 .title-decor {
@@ -159,7 +161,6 @@ footer.decorated-zone::after {
   gap: var(--main-gap, 50px);
   justify-content: center;
   align-items: center;
-  margin-block-start: 40px;
 }
 
 .main__section {
@@ -168,12 +169,6 @@ footer.decorated-zone::after {
   grid-template-rows: auto minmax(min-content, max-content);
   grid-auto-rows: minmax(min-content, auto);
   gap: var(--inside-sections-gap, 20px);
-}
-
-.main__section-title,
-.main__subtitle-extra,
-.main__subtitle-mini,
-.main__paragraph {
   font-family: var(--main-font-family), monospace;
   font-size: 1em;
   line-height: 23.4px;
@@ -184,31 +179,24 @@ footer.decorated-zone::after {
   font-weight: bold;
 }
 
-.main__text,
-.main__text-part-mini {
+.main__article-text {
   display: grid;
   grid-template-rows: min-content 1fr;
   grid-auto-rows: min-content;
   gap: 10px;
 }
 
-/*.main__text-part-mini:not(:first-of-type) {*/
-/*  margin-block-start: 10px;*/
-/*}*/
-
-.main__subtitle-extra,
-.main__subtitle-mini {
-  color: var(--accent-text-color);
-}
-
-.main__subtitle-extra {
-  font-weight: bold;
-  /*margin-block-end: 10px;*/
-}
-
-.main__subtitle-mini,
+.main__subarticle-title,
 .main__paragraph {
   font-weight: normal;
+}
+
+.main__section-advice {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto minmax(min-content, max-content);
+  grid-auto-rows: minmax(min-content, auto);
+  gap: var(--inside-sections-gap, 20px);
 }
 
 .main__paragraph {
@@ -232,10 +220,6 @@ footer.decorated-zone::after {
   outline: none;
   text-decoration: underline;
   cursor: pointer;
-}
-
-.main__article > p:has(+p) {
-  margin-block-end: 10px;
 }
 
 /*.gallery {*/
@@ -281,3 +265,70 @@ footer.decorated-zone::after {
   align-items: center;
 }
 
+@media (width <= 375px) {
+  .header__title {
+    max-inline-size: 355px;
+  }
+}
+
+@media (width >= 375px) and (width <= 768px) {
+  .header__title {
+    max-inline-size: 364px;
+  }
+}
+
+@media (width >= 768px) and (width <= 1024px) {
+  .header__title {
+    max-inline-size: 491px;
+  }
+}
+
+@media (width >= 768px) {
+  :root {
+    --page-gap: 60px;
+    --adaptive-paddings: 20px;
+    --corner-inset: 20px;
+    --main-gap: 80px;
+  }
+
+  .header {
+    min-block-size: 1004px;
+    padding-block-end: 20px;
+  }
+
+  .header__no-focus {
+    margin-inline-start: -20px;
+  }
+
+  .header__title {
+    max-inline-size: 50%;
+  }
+
+  .decorated-zone::before {
+    left: 0;
+    bottom: var(--corner-inset);
+    border-inline-start:  1px solid var(--decorated-zone-color);
+    border-block-end: 1px solid var(--decorated-zone-color);
+  }
+
+  .decorated-zone::after {
+    right: 0;
+    top: 0;
+    border-inline-end: 1px solid var(--decorated-zone-color);
+    border-block-start: 1px solid var(--decorated-zone-color);
+  }
+
+
+  .main__section {
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .main__article {
+    display: grid;
+    grid-template-columns: fit-content(minmax (min-content, max-content));
+    grid-template-rows: 1fr 1fr;
+  }
+
+
+}
