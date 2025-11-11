@@ -1,24 +1,13 @@
-/*
-  Специально для светлой темы при наличии класса.
-  Здесь окажутся стили, которые нужно переопределить принудительно,
-  переключая тему
-*/
-
 :root.theme-light {
   --bg-page-image: url(../images/cover-image-light.png);
   --bg-color: #FFF1F7;
   --decorated-zone-color: #353430;
-  --corner-inset: 10px;
+  --title-color: #353430;
   --focus-color: #FFC2E6;
-  --focus-visible-color: #FFF;
   --accent-color: #FF8DCB;
   --accent-text-color: #353430;
   --font-color-article-text: #353430;
   --theme-switcher-display: none;
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
 }
 
 @media (prefers-color-scheme: light) {
@@ -26,9 +15,8 @@
     --bg-page-image: url(../images/cover-image-light.png);
     --bg-color: #FFF1F7;
     --decorated-zone-color: #353430;
-    --corner-inset: 10px;
+    --title-color: #353430;
     --focus-color: #FFC2E6;
-    --focus-visible-color: #FFF;
     --accent-color: #FF8DCB;
     --accent-text-color: #353430;
     --font-color-article-text: #353430;
@@ -38,7 +26,7 @@
 
 @media (prefers-color-scheme: light) {
   .rec.theme-light {
-    display: none;
+    display: var(--theme-switcher-display);
   }
 }
 

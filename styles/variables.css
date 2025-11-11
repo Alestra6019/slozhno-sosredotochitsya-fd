@@ -3,25 +3,20 @@
   --page-gap: 40px;
   --bg-color: #000028;
   --decorated-zone-color: #FF0070;
-  --corner-inset: 10px;
+  --title-color: #FF0070;
   --focus-color: #DB00FF;
-  --focus-visible-color: #FFF;
   --accent-color: #FF0070;
   --accent-text-color: #000028;
+  --font-color-article-text: #F1B2CE;
   --main-font-family: 'IBM Plex mono';
   --font-size: 18px;
   --adaptive-padding: 10px;
   --main-gap: 50px;
   --inside-sections-gap: 20px;
   --gallery-margin: 10px;
-  --font-color-article-text: #F1B2CE;
-  --image-sunset: url(../images/sunset.png);
-  --image-ice-cream: url(../images/ice-cream.png);
-  --image-street: url(../images/street.png);
-  --image-tape: url(../images/tape.png);
-  --image-books: url(../images/books.png);
   --theme-switcher-display: inline-flex;
 }
+
 
 /*
   Переменные для вашего проекта
