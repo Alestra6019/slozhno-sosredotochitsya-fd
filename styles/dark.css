@@ -1,11 +1,11 @@
 :root.theme-dark {
   --bg-page-image: url(../images/cover-image-dark.png);
   --bg-color: #000028;
-  --decorated-zone-color: #FF0070;
-  --title-color: #FF0070;
-  --focus-color: #DB00FF;
-  --accent-color: #FF0070;
+  --decorated-zone-color: #ff0070;
+  --title-color: #ff0070;
+  --focus-color: #db00ff;
+  --accent-color: #ff0070;
   --accent-text-color: #000028;
-  --font-color-article-text: #F1B2CE;
+  --font-color-article-text: #f1b2ce;
   --theme-switcher-display: inline-flex;
 }

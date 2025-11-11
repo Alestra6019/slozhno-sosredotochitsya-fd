@@ -28,7 +28,7 @@
 
 .decorated-zone::before,
 .decorated-zone::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 25px;
   height: 25px;
@@ -65,7 +65,7 @@
 }
 
 .rec::after {
-  content: "";
+  content: '';
   width: 8px;
   height: 8px;
   border-radius: 50%;
@@ -259,28 +259,24 @@
 }
 
 @media (width <= 375px) {
-
   .header__title {
     max-inline-size: 355px;
   }
 }
 
 @media (width >= 375px) and (width <= 768px) {
-
   .header__title {
     max-inline-size: 364px;
   }
 }
 
 @media (width >= 768px) and (width <= 1024px) {
-
   .header__title {
     max-inline-size: 491px;
   }
 }
 
 @media (width >= 768px) {
-
   :root {
     --page-gap: 60px;
     --adaptive-padding: 20px;
@@ -295,7 +291,7 @@
 
   .decorated-zone::before,
   .decorated-zone::after {
-    content: "";
+    content: '';
     position: absolute;
     width: 25px;
     height: 25px;
@@ -375,13 +371,16 @@
 }
 
 @media (width >= 1024px) {
-
   :root {
     --page-gap: 60px;
     --adaptive-padding: 20px;
     --main-gap: 80px;
     --gallery-margin: 20px;
-    --inside-sections-gap: clamp(10px, calc(10px + ((100vw - 375px) * (10 / (1024 - 375)))), 20px);
+    --inside-sections-gap: clamp(
+      10px,
+      calc(10px + ((100vw - 375px) * (10 / (1024 - 375)))),
+      20px
+    );
   }
 
   .header {
